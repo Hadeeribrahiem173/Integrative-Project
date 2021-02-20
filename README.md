@@ -186,6 +186,9 @@ Merged_Batch_2_final <- apply(Merged_Batch_2_final, 2, as.numeric)
 Aggregated_Batch_2 <- aggregate(Merged_Batch_2_final,list(Merged_Batch_2$symbol), FUN= mean)
 row.names(Aggregated_Batch_2) <- Aggregated_Batch_2$Group.1
 Aggregated_Batch_2$Group.1 <- NULL 
+#Log transformation
+#All_data_Exp = log2(Aggregated_Batch_2)  ### We will not use log as the data is already log
+
 All_data_Exp = Aggregated_Batch_2
 ```
 # Upload sample info file
