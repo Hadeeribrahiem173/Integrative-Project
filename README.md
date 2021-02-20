@@ -1,8 +1,8 @@
 # Integrative Bioinformatics project
 ```
- Project title: dentification of differentially expressed genes related to HCV-induced HCC
- date: 20 February 2021
- authors: Amany Awad, Amr Elkholy, Hadeer Essa, Lamis Yehia, Sara Ali, Shaymaa Abdallah
+ Project title: Identification of differentially expressed genes related to HCV-induced HCC
+ Date: 20 February 2021
+ Authors: Amany Awad, Amr Elkholy, Hadeer Essa, Lamis Yehia, Sara Ali, Shaymaa Abdallah
  Under supervision of Dr. Mohamed Hamed
 ```
 # Abstract 
