@@ -1,4 +1,10 @@
-# Identification of differentially expressed genes related to HCV-induced HCC
+# Integrative Bioinformatics project
+```
+ Project title: dentification of differentially expressed genes related to HCV-induced HCC
+ date: 20 February 2021
+ authors: Amany Awad, Amr Elkholy, Hadeer Essa, Lamis Yehia, Sara Ali, Shaymaa Abdallah
+ Under supervision of Dr. Mohamed Hamed
+```
 # Abstract 
 
 ```
@@ -24,6 +30,25 @@ may involve in the development of HCC in HCV-infected patients.
 https://cutt.ly/xli20O7
 ```
 # The Script (The code is by R programming)
+## sessioninfo()
+```
+R version 4.0.3 (2020-10-10)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 18363)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252 LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] BiocManager_1.30.10 compiler_4.0.3      tools_4.0.3         remotes_2.2.0 
+```
 ## loading the required libraries
 ```
 library(BiocManager)
@@ -425,7 +450,7 @@ TFmirdata$flag <- HCV_HCC_DEGs_unique$lfc_diff
 
 TFmirdata[TFmirdata$lfc_diff>0,]$flag = 1  # to check if the value of LFC>0
 TFmirdata[TFmirdata$lfc_diff<0,]$flag= -1
-table(TFmirdata$flag)  # I have 657 for -1 flag and I have 806 for 1 flag
+table(TFmirdata$flag)  
 TFmir<- data.frame(rownames(TFmirdata), TFmirdata$flag)
 
 write.table(TFmir, file = "D:/Bioinformatics/NU courses/Integrative-Mohamed Hamed/project/TFmir.common.DEGs.txt", sep="\t",quote = F , row.names= F, col.names = F )
@@ -436,13 +461,13 @@ write.table(TFmir, file = "D:/Bioinformatics/NU courses/Integrative-Mohamed Hame
 # to estimating the disease signature and drug signature
 ## For up regulated genes:
 upregulated_genes_index <- HCV_HCC_DEGs_unique$lfc_diff > 0
-All_upregulated_genes <- rownames(HCV_HCC_DEGs_unique[upregulated_genes_index,]) ###334 genes
+All_upregulated_genes <- rownames(HCV_HCC_DEGs_unique[upregulated_genes_index,]) 
 write.table(All_upregulated_genes, 'D:/Bioinformatics/NU courses/Integrative-Mohamed Hamed/project/All_upregulated_genes.txt', quote = FALSE,
             sep = '\t', row.names = FALSE)
 
 ## For down regulated genes:
 downregulated_genes_index <- HCV_HCC_DEGs_unique$lfc_diff < 0
-All_downregulated_genes <- rownames(HCV_HCC_DEGs_unique[downregulated_genes_index,]) ###305 genes
+All_downregulated_genes <- rownames(HCV_HCC_DEGs_unique[downregulated_genes_index,])
 write.table(All_downregulated_genes, 'D:/Bioinformatics/NU courses/Integrative-Mohamed Hamed/project/All_downregulated_genes.txt', quote = FALSE,
             sep = '\t', row.names = FALSE)
 
