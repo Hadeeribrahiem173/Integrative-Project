@@ -287,22 +287,22 @@ with(subset(All_HCC_DEGs_Res[[2]], t_pval_adj<.05 & lfc_diff < -log2(2)), points
 ```
 # 9- Venn Diagram:
 ```
-##Visualization by venn diagram between (Normal& HCC), (Normal& HCV_HCC) and (Normal& HCV):
+##Visualization by venn diagram between ('A'= Normal& HCC), ('B'= Normal& HCV_HCC) and ('C'= Normal& HCV):
 venn_genes1 <- list('A'= All_HCC_Sign_DEGs_genes[[1]], 'B'=All_Normal_Sign_DEGs_genes[[2]],
                     'C'=All_Normal_Sign_DEGs_genes[[1]])
 ggVennDiagram(venn_genes1, color = "grey")
 
-##Visualization by venn diagram between (HCC& Normal), (HCC& HCV) and (HCC& HCC-HCV):
+##Visualization by venn diagram between ('A'= HCC& Normal), ('B'= HCC& HCV) and (C'= HCC& HCC-HCV):
 venn_genes2 <- list('A'= All_HCC_Sign_DEGs_genes[[1]], 'B'=All_HCC_Sign_DEGs_genes[[2]], 
                     'C'= All_HCC_Sign_DEGs_genes[[3]])
 ggVennDiagram(venn_genes2, color = "grey")
 
-##Visualization by venn diagram between (HCV& Normal), (HCV& HCC) and (HCV& HCC_HCV):
+##Visualization by venn diagram between ('A'= HCV& Normal), ('B'= HCV& HCC) and (C'= HCV& HCC_HCV):
 venn_genes3 <- list('A'=All_Normal_Sign_DEGs_genes[[1]], 'B'=All_HCC_Sign_DEGs_genes[[2]], 
                   'C'= All_Cirrhosis_Sign_DEGs_genes[[1]])
 ggVennDiagram(venn_genes3, color = "grey")
 
-##Visualization by venn diagram between ( HCC-HCV& Normal), (HCC-HCV& HCC) and (HCC_HCV& HCV):
+##Visualization by venn diagram between ('A'= HCC-HCV& Normal), ('B'= HCC-HCV& HCC) and (C'= HCC_HCV& HCV):
 venn_genes4 <- list('A'=All_Normal_Sign_DEGs_genes[[2]],  'B'= All_HCC_Sign_DEGs_genes[[3]], 
                     'C'= All_Cirrhosis_Sign_DEGs_genes[[1]])
 ggVennDiagram(venn_genes4, color = "grey")
